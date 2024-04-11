@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 14:43:16 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:43:19 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/11 18:37:05 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/11 18:42:39 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+void ft_bzero(void *str, size_t n)
 {
-    return (c >= 0 && c <= 127);
+    size_t i = 0;
+    char *string = (char *)str;
+
+    while (i < n)
+    {
+        string[i] = 0;
+        i++;
+    }
 }
 
-/*int main(int argc, char *argv[])
+/*int main()
 {
-    for (int i = 1; i < argc; i++)
-    {
-        for (int j = 0; argv[i][j] != '\0'; j++)
-        {
-            if (ft_isascii(argv[i][j]))
-            {
-                printf("  Character %d is ascii.\n", j);
-            }
-            else
-            {
-                printf("  Character %d cannot be represented by an ASCII character.\n", j);
-            }
-        }
-    }
-
+    char str[] = "42 School ";
+    printf("before bzero: %s\n", str);
+    ft_bzero(str, 2);
+    printf("after bzero: %s\n", str);
     return (0);
 }*/

@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 14:43:16 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:43:19 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/11 18:45:10 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/11 19:12:10 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    return (c >= 0 && c <= 127);
+    size_t i;
+    char *source = (char *)src;
+    char *destino = (char *)dest;
+
+    i = 0;
+    while (i < n)
+    {
+        destino[i] = source[i];
+        i++;
+    }
+    return (dest);
 }
 
-/*int main(int argc, char *argv[])
+/*int main()
 {
-    for (int i = 1; i < argc; i++)
-    {
-        for (int j = 0; argv[i][j] != '\0'; j++)
-        {
-            if (ft_isascii(argv[i][j]))
-            {
-                printf("  Character %d is ascii.\n", j);
-            }
-            else
-            {
-                printf("  Character %d cannot be represented by an ASCII character.\n", j);
-            }
-        }
-    }
-
+    char str[] = "I'm at 42 School";
+    char dest[] = "I'm testing this function";
+    printf("Before memcpy: %s\n", dest);
+    ft_memcpy(dest, str, 16);
+    printf("After memcpy: %s\n", dest);
     return (0);
 }*/
