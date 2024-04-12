@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 19:20:16 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 20:01:30 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/12 17:09:00 by marvin            #+#    #+#             */
+/*   Updated: 2024/04/12 17:12:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
-    size_t i;
     char *destino;
     char *source;
     destino = (char *)dest;
     source = (char *)src;
-    i = 0;
+
+    if (!dest && !src)
+        return (dest);
 
     if (dest <= src)
     {
-        while (i < n)
-        {
-            destino[i] = source[i];
-            i++;
-        }
+        ft_memcpy(destino, source, n);
     }
     else if (dest > src)
     {
-        i = n - 1;
-        while (i > 0)
+        destino += n - 1;
+        source += n - 1;
+        while (n--)
         {
-            destino[i] = source[i];
-            i--;
+            *destino-- = *source--;
         }
     }
     return (dest);
@@ -44,11 +41,10 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 /*int main()
 {
     char str[] = "I'm at 42 School";
-    char dest[] = "I'm testing";
+    char dest[] = "I'm testing this function";
+
     printf("Before memmove: %s\n", dest);
     ft_memmove(dest, str, 12);
     printf("After memmove: %s\n", dest);
     return (0);
 }*/
-
-// https://marmota.medium.com/c-language-making-memmove-def8792bb8d5
