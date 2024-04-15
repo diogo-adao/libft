@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 18:37:05 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:49:26 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/15 15:47:00 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/15 15:50:02 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t n)
+int	ft_tolower(int c)
 {
-	size_t	i;
-	char	*string;
-
-	i = 0;
-	string = (char *)str;
-	while (i < n)
+	if (c >= 'A' && c <= 'Z')
 	{
-		string[i] = 0;
-		i++;
+		return (c + 32);
 	}
+	else
+		return (c);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    printf("before bzero: %s\n", str);
-    ft_bzero(str, 2);
-    printf("after bzero: %s\n", str);
-    return (0);
+/*int main() {
+
+	char c = 'A';
+	printf("%c\n", ft_tolower(c));
+	return (0);
 }*/

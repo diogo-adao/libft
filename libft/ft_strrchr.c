@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 18:37:05 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:49:26 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/15 18:12:29 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/15 18:58:11 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	size_t	i;
-	char	*string;
+	int	i;
 
-	i = 0;
-	string = (char *)str;
-	while (i < n)
+	i = ft_strlen(str);
+	str += i;
+	while (i--)
 	{
-		string[i] = 0;
-		i++;
+		if (*str == c)
+			return ((char *)str);
+		*str--;
 	}
+	return (0);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    printf("before bzero: %s\n", str);
-    ft_bzero(str, 2);
-    printf("after bzero: %s\n", str);
-    return (0);
+/*int main() {
+	const char str[] = "Hello, I'm at 42 school!";
+	char c = 'h';
+	char *res;
+
+	res = ft_strrchr(str, c);
+	printf("String after last |%c| is - |%s|\n", c, res);
+	return (0);
 }*/

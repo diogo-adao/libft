@@ -6,15 +6,15 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:42:49 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:43:06 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:51:50 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
 
 /*int main(int argc, char *argv[])

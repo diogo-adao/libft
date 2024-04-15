@@ -6,25 +6,27 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:45:10 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 19:12:10 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:54:25 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    size_t i;
-    char *source = (char *)src;
-    char *destino = (char *)dest;
+	size_t	i;
+	char	*source;
+	char	*destino;
 
-    i = 0;
-    while (i < n)
-    {
-        destino[i] = source[i];
-        i++;
-    }
-    return (dest);
+	i = 0;
+	source = (char *)src;
+	destino = (char *)dest;
+	while (i < n)
+	{
+		destino[i] = source[i];
+		i++;
+	}
+	return (dest);
 }
 
 /*int main()
