@@ -1,37 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 19:00:54 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 15:37:31 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 16:56:52 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 17:47:42 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*p;
+	int		i;
+	int		j;
 
 	i = 0;
-	while (i < n && str1[i] && str2[i])
+	j = 0;
+	p = (char *)malloc(ft_strlen(s1) + ft_strlen(s2));
+	if (p != NULL)
 	{
-		if (str1[i] < str2[i] || str1[i] > str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		while (s1[i])
+		{
+			p[i] = s1[i];
+			i++;
+		}
+		while (s2[j])
+		{
+			p[i] = s2[j];
+			i++;
+			j++;
+		}
 	}
-	return (0);
+	return (p);
 }
 
-/*int main() {
-	char str1[15] = "Hello";
-	char str2[15] = "Hello";
-	int res;
+/*int main()
+{
+	char str1[] = "Hello I'm at ";
+	char str2[] = "42 school";
 
-	res = ft_strncmp(str1, str2, 8);
-	printf("%d\n", res);
+	char *cat = ft_strjoin(str1, str2);
+	printf("%s\n", cat);
 	return (0);
 }*/

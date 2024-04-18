@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 19:00:54 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 15:37:31 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 15:35:07 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 15:53:27 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_strdup(const char *str)
 {
-	size_t	i;
+	int		i;
+	char	*ptr;
 
 	i = 0;
-	while (i < n && str1[i] && str2[i])
+	ptr = (char *)malloc(ft_strlen(str));
+	if (ptr != NULL)
 	{
-		if (str1[i] < str2[i] || str1[i] > str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		while (str[i])
+		{
+			ptr[i] = str[i];
+			i++;
+		}
 	}
-	return (0);
+	return (ptr);
 }
 
 /*int main() {
-	char str1[15] = "Hello";
-	char str2[15] = "Hello";
-	int res;
+	char str[] = "42 school";
 
-	res = ft_strncmp(str1, str2, 8);
-	printf("%d\n", res);
+	char *target = ft_strdup(str);
+	printf("%s\n", target);
 	return (0);
 }*/

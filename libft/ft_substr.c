@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 19:00:54 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 15:37:31 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 15:56:06 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 17:03:17 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	char	*p;
 
 	i = 0;
-	while (i < n && str1[i] && str2[i])
+	p = (char *)malloc(len);
+	if (p != NULL)
 	{
-		if (str1[i] < str2[i] || str1[i] > str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		while (i < len)
+		{
+			p[i] = s[start];
+			start++;
+			i++;
+		}
 	}
-	return (0);
+	return (p);
 }
 
 /*int main() {
-	char str1[15] = "Hello";
-	char str2[15] = "Hello";
-	int res;
+	char str[17] = "I'm at 42 school";
+	char *substr = ft_substr(str, 7, 9);
 
-	res = ft_strncmp(str1, str2, 8);
-	printf("%d\n", res);
+	printf("%s\n", substr);
 	return (0);
 }*/

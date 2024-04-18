@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:12:29 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 18:58:11 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/16 15:00:50 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *str, int c)
 	{
 		if (*str == c)
 			return ((char *)str);
-		*str--;
+		str--;
 	}
 	return (0);
 }

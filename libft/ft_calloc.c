@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 19:00:54 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 15:37:31 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 14:10:28 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 15:32:53 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t n)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	size_t	i;
+	void	*p;
 
-	i = 0;
-	while (i < n && str1[i] && str2[i])
+	p = malloc(nitems * size);
+	if (p != NULL)
 	{
-		if (str1[i] < str2[i] || str1[i] > str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		ft_memset(p, 0, nitems * size);
 	}
-	return (0);
+	return (p);
 }
 
-/*int main() {
-	char str1[15] = "Hello";
-	char str2[15] = "Hello";
-	int res;
+/*int main()
+{
+    int* ptr;
+    int n, i;
 
-	res = ft_strncmp(str1, str2, 8);
-	printf("%d\n", res);
-	return (0);
+    n = 5;
+    ptr = (int*)ft_calloc(n, sizeof(int));
+
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+    }
+    else {
+        printf("Memory successfully allocated using calloc.\n");
+    }
+    return 0;
 }*/
