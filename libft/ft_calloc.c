@@ -17,9 +17,16 @@ void	*ft_calloc(size_t nitems, size_t size)
 	void	*p;
 
 	p = malloc(nitems * size);
+<<<<<<< HEAD
 	if (!p)
         return (NULL);
 	ft_memset(p, 0, nitems * size);
+=======
+	if (p != NULL)
+	{
+		ft_memset(p, 0, nitems * size);
+	}
+>>>>>>> cd45ba774bd40ef1fc15bd3046a7d33d87e93589
 	return (p);
 }
 

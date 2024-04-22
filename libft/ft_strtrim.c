@@ -14,6 +14,7 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+<<<<<<< HEAD
 	char *str;
 	int start;
 	int end;
@@ -33,6 +34,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (!str)
 		return (0);	
+=======
+	int		start;
+	int		end;
+	char	*str;
+
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[start]) && start <= end)
+		start++;
+	if (start > end)
+		return (ft_strdup(s1 + end + 1));
+	while (ft_strchr(set, s1[end]) && end >= 0)
+		end--;
+	str = malloc(end - start + 1);
+	if (!str)
+		return (NULL);
+>>>>>>> cd45ba774bd40ef1fc15bd3046a7d33d87e93589
 	ft_memcpy(str, &s1[start], end - start + 1);
 	return (str);
 }
@@ -45,4 +65,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char *target = ft_strtrim(str, set);
 	printf("%s\n", target);
 	return (0);
+<<<<<<< HEAD
 }*/
+=======
+}*/
+>>>>>>> cd45ba774bd40ef1fc15bd3046a7d33d87e93589
