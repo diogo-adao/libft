@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 15:35:07 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 15:53:27 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strdup(const char *str)
 {
-	size_t	i;
-	char	*string;
+	int		i;
+	char	*ptr;
 
 	i = 0;
-	string = (char *)str;
-	while (i < n)
+	ptr = (char *)malloc(ft_strlen(str) + 1);
+	if (!ptr)
+		return (NULL);
+	while (str[i])
 	{
-		string[i] = c;
+		ptr[i] = str[i];
 		i++;
 	}
-	return (str);
+	return (ptr);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    char c = '$';
+/*int main() {
+	char str[] = "42 school";
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+	char *target = ft_strdup(str);
+	printf("%s\n", target);
+	return (0);
 }*/

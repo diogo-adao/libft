@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/15 15:16:16 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/15 15:45:54 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_toupper(int c)
 {
-	size_t	i;
-	char	*string;
-
-	i = 0;
-	string = (char *)str;
-	while (i < n)
+	if (c >= 'a' && c <= 'z')
 	{
-		string[i] = c;
-		i++;
+		return (c - 32);
 	}
-	return (str);
+	else
+		return (c);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    char c = '$';
+/*int main() {
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+	char c = 'a';
+	printf("%c\n", ft_toupper(c));
+	return (0);
 }*/

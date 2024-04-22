@@ -6,44 +6,44 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:17:58 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:18:13 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:50:36 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    int res = 0;
-    int sign = 1;
-    int i = 0;
+	int		res;
+	int		sign;
+	int		i;
 
-    while (str[i] == ' ')
-    {
-        i++;
-    }
-
-    if (str[i] == '-' || str[i] == '+')
-    {
-        sign = (str[i] == '-') ? -1 : 1;
-        i++;
-    }
-
-    while (str[i] >= '0' && str[i] <= '9')
-    {
-        res = res * 10 + str[i] - '0';
-        i++;
-    }
-    return sign * res;
+	res = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	return (sign * res);
 }
 
 /*int main(int argc, char *argv[])
 {
-    int i = 0;
+    int i = 1;
 
     if (argc < 2)
     {
-        printf("Provide arguments.");
+        printf("Provide arguments.\n");
         return 0;
     }
 

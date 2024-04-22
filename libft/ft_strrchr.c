@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/15 18:12:29 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/16 15:00:50 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	size_t	i;
-	char	*string;
+	int	i;
 
-	i = 0;
-	string = (char *)str;
-	while (i < n)
+	i = ft_strlen(str);
+	str += i;
+	while (i--)
 	{
-		string[i] = c;
-		i++;
+		if (*str == c)
+			return ((char *)str);
+		str--;
 	}
-	return (str);
+	return (0);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    char c = '$';
+/*int main() {
+	const char str[] = "Hello, I'm at 42 school!";
+	char c = 'h';
+	char *res;
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+	res = ft_strrchr(str, c);
+	printf("String after last |%c| is - |%s|\n", c, res);
+	return (0);
 }*/

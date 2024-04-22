@@ -6,15 +6,15 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:43:16 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:43:19 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:55:16 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    return (c >= 0 && c <= 127);
+	return (c >= 0 && c <= 127);
 }
 
 /*int main(int argc, char *argv[])
@@ -29,7 +29,7 @@ int ft_isascii(int c)
             }
             else
             {
-                printf("  Character %d cannot be represented by an ASCII character.\n", j);
+                printf("  Character %d is not ascii.\n", j);
             }
         }
     }

@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/16 15:02:24 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/16 19:51:28 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	size_t	i;
-	char	*string;
+	char	*string1;
+	char	*string2;
 
 	i = 0;
-	string = (char *)str;
+	string1 = (char *)str1;
+	string2 = (char *)str2;
 	while (i < n)
 	{
-		string[i] = c;
+		if (string1[i] < string2[i] || string1[i] > string2[i])
+			return (string1[i] - string2[i]);
 		i++;
 	}
-	return (str);
+	return (0);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    char c = '$';
+/*int main() {
+	char str1[] = "Hello";
+	char str2[] = "Hello";
+	int res;
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+	res = ft_memcmp(str1, str2, 7);
+	printf("%d\n", res);
+	return (0);
 }*/

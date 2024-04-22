@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 15:56:06 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 17:03:17 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	char	*string;
+	char	*p;
 
 	i = 0;
-	string = (char *)str;
-	while (i < n)
+	p = (char *)malloc(sizeof(char) * (len + 1));
+	if (!p)
+		return (NULL);
+	while (i < len)
 	{
-		string[i] = c;
+		p[i] = s[start];
+		start++;
 		i++;
 	}
-	return (str);
+	return (p);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    char c = '$';
+/*int main() {
+	char str[17] = "I'm at 42 school";
+	char *substr = ft_substr(str, 7, 9);
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+	printf("%s\n", substr);
+	return (0);
 }*/

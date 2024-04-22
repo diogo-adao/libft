@@ -6,15 +6,15 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:43:30 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:43:31 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:57:58 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    return (c >= '0' && c <= '9');
+	return (c >= '0' && c <= '9');
 }
 
 /*int main(int argc, char *argv[])

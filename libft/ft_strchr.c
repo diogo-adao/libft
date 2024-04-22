@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/15 15:58:47 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/15 18:11:12 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strchr(const char *str, int c)
 {
-	size_t	i;
-	char	*string;
-
-	i = 0;
-	string = (char *)str;
-	while (i < n)
+	while (*str)
 	{
-		string[i] = c;
-		i++;
+		if (*str == c)
+		{
+			return ((char *)str);
+		}
+		str++;
 	}
-	return (str);
+	return (0);
 }
 
-/*int main()
-{
-    char str[] = "42 School ";
-    char c = '$';
+/*int main() {
+	const char str[] = "Hello, I'm at 42!";
+	char c = 'I';
+	char *res;
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+	res = ft_strchr(str, c);
+	printf("String after |%c| is - |%s|\n", c, res);
+	return (0);
 }*/

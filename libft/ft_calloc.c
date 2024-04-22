@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 14:10:28 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 15:32:53 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-	size_t	i;
-	char	*string;
+	void	*p;
 
-	i = 0;
-	string = (char *)str;
-	while (i < n)
-	{
-		string[i] = c;
-		i++;
-	}
-	return (str);
+	p = malloc(nitems * size);
+	if (!p)
+        return (NULL);
+	ft_memset(p, 0, nitems * size);
+	return (p);
 }
 
 /*int main()
 {
-    char str[] = "42 School ";
-    char c = '$';
+    int* ptr;
+    int n, i;
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+    n = 5;
+    ptr = (int*)ft_calloc(n, sizeof(int));
+
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+    }
+    else {
+        printf("Memory successfully allocated using calloc.\n");
+    }
+    return 0;
 }*/

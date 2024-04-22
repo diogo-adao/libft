@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:02 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:58:13 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/17 16:56:52 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/17 17:47:42 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	char	*string;
+	char	*p;
+	int		i;
+	int		j;
 
 	i = 0;
-	string = (char *)str;
-	while (i < n)
+	j = 0;
+	p = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!p)
+		return (NULL);
+	while (s1[i])
 	{
-		string[i] = c;
+		p[i] = s1[i];
 		i++;
 	}
-	return (str);
+	while (s2[j])
+	{
+		p[i] = s2[j];
+		i++;
+		j++;
+	}
+	return (p);
 }
 
 /*int main()
 {
-    char str[] = "42 School ";
-    char c = '$';
+	char str1[] = "Hello I'm at ";
+	char str2[] = "42 school";
 
-    printf("%s", ft_memset(str, c, 2));
-    return (0);
+	char *cat = ft_strjoin(str1, str2);
+	printf("%s\n", cat);
+	return (0);
 }*/

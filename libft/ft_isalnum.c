@@ -6,15 +6,15 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:19:59 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:20:18 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:53:51 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    return (ft_isalpha(c) || ft_isdigit(c));
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
 
 /*int main(int argc, char *argv[])
