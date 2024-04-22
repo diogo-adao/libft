@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:49:33 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/17 20:13:26 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:02:43 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *str;
-	int start;
-	int end;
+	char	*str;
+	int		start;
+	int		end;
 
 	start = 0;
 	end = ft_strlen(s1) - 1;
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	str = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (!str)
-		return (0);	
+		return (0);
 	ft_memcpy(str, &s1[start], end - start + 1);
 	return (str);
 }

@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 14:10:28 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/22 14:03:22 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/22 19:02:22 by diolivei          #+#    #+#             */
+/*   Updated: 2024/04/22 19:41:14 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	void	*p;
+	unsigned int	i;
 
-	p = malloc(nitems * size);
-	if (!p)
-		return (NULL);
-	ft_memset(p, 0, nitems * size);
-	return (p);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
 
-/*int main()
+/* void uppercase(unsigned int, char *ch)
 {
-    int* ptr;
-    int n, i;
+    *ch = ft_toupper(*ch);
+}
 
-    n = 5;
-    ptr = (int*)ft_calloc(n, sizeof(int));
-
-    if (ptr == NULL) {
-        printf("Memory not allocated.\n");
-    }
-    else {
-        printf("Memory successfully allocated using calloc.\n");
-    }
-    return 0;
-}*/
+int main()
+{
+    char str[] = "Hello";
+    ft_striteri(str, uppercase);
+    printf("%s\n", str);
+    return (0);
+} */

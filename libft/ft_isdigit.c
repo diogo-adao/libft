@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:43:30 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 14:57:58 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:22:59 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_isdigit(int c)
 	return (c >= '0' && c <= '9');
 }
 
-/*int main(int argc, char *argv[])
+/* int main(int argc, char *argv[])
 {
     for (int i = 1; i < argc; i++)
     {
@@ -35,4 +35,4 @@ int	ft_isdigit(int c)
     }
 
     return (0);
-}*/
+} */
