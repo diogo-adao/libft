@@ -41,11 +41,7 @@ char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
-<<<<<<< HEAD
 char    **ft_split(char const *s, char c);
-=======
-char	**ft_split(char const *s, char c);
->>>>>>> cd45ba774bd40ef1fc15bd3046a7d33d87e93589
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);

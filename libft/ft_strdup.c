@@ -18,7 +18,6 @@ char	*ft_strdup(const char *str)
 	char	*ptr;
 
 	i = 0;
-<<<<<<< HEAD
 	ptr = (char *)malloc(ft_strlen(str) + 1);
 	if (!ptr)
 		return (NULL);
@@ -26,16 +25,6 @@ char	*ft_strdup(const char *str)
 	{
 		ptr[i] = str[i];
 		i++;
-=======
-	ptr = (char *)malloc(ft_strlen(str));
-	if (ptr != NULL)
-	{
-		while (str[i])
-		{
-			ptr[i] = str[i];
-			i++;
-		}
->>>>>>> cd45ba774bd40ef1fc15bd3046a7d33d87e93589
 	}
 	return (ptr);
 }
