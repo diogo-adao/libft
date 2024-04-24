@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 14:11:42 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/22 19:02:40 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/24 16:23:11 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_calloc(size_t nitems, size_t size);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void    ft_putchar_fd(char c, int fd);
-void    ft_putstr_fd(char *s, int fd);
-void    ft_putendl_fd(char *s, int fd);
-void    ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *str1, const char *str2, size_t n);
