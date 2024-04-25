@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:49:33 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/22 14:02:43 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:26:12 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!str)
 		return (0);
 	ft_memcpy(str, &s1[start], end - start + 1);
+	str[end - start + 1] = '\0';
 	return (str);
 }
 

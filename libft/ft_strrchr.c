@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:12:29 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 15:00:50 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:57:17 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,31 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	i;
+	int		i;
+	char	*ptr;
 
-	i = ft_strlen(str);
-	str += i;
+	ptr = (char *)str;
+	i = strlen(ptr);
+	ptr += i;
+	if (!c)
+		return (ptr);
+	i += 1;
 	while (i--)
 	{
-		if (*str == c)
-			return ((char *)str);
-		str--;
+		if (*ptr == (unsigned char)c)
+			return (ptr);
+		if (i > 0)
+			ptr--;
 	}
 	return (0);
 }
 
-/*int main() {
+/* int main() {
 	const char str[] = "Hello, I'm at 42 school!";
-	char c = 'h';
+	char c;
 	char *res;
 
 	res = ft_strrchr(str, c);
 	printf("String after last |%c| is - |%s|\n", c, res);
 	return (0);
-}*/
+} */

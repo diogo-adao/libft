@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:56:06 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/17 17:03:17 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:18:13 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 		i++;
 	}
+	p[i] = '\0';
 	return (p);
 }
 

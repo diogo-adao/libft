@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 19:00:54 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 15:37:31 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:50:21 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,29 @@
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	size_t	i;
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
 
-	i = 0;
-	while (i < n && str1[i] && str2[i])
+	ptr1 = (unsigned char *)str1;
+	ptr2 = (unsigned char *)str2;
+	while (n && *ptr1 && *ptr1 == *ptr2)
 	{
-		if (str1[i] < str2[i] || str1[i] > str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		ptr1++;
+		ptr2++;
+		n--;
 	}
-	return (0);
+	if (n)
+		return (*ptr1 - *ptr2);
+	else
+		return (0);
 }
 
-/*int main() {
-	char str1[15] = "Hello";
-	char str2[15] = "Hello";
+/* int main() {
+	char str1[] = "olaaa";
+	char str2[] = "olAaA";
 	int res;
 
-	res = ft_strncmp(str1, str2, 8);
+	res = ft_strncmp(str1, str2, 2);
 	printf("%d\n", res);
 	return (0);
-}*/
+} */

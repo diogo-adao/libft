@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:17:58 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/16 14:50:36 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:05:22 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	ft_atoi(const char *str)
 	res = 0;
 	sign = 1;
 	i = 0;
-	while (str[i] == ' ')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r'
+		|| str[i] == '\f' || str[i] == '\v' || str[i] == '\n')
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -37,7 +38,7 @@ int	ft_atoi(const char *str)
 	return (sign * res);
 }
 
-/*int main(int argc, char *argv[])
+/* int main(int argc, char *argv[])
 {
     int i = 1;
 
@@ -50,8 +51,8 @@ int	ft_atoi(const char *str)
     while (i < argc)
     {
         // printf("%d\n", atoi(argv[i]));
-        printf("%d\n", ft_atoi(argv[i]));
+        printf("%d\n", atoi(argv[i]));
         i++;
     }
     return (0);
-}*/
+} */
