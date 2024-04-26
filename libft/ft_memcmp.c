@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 15:02:24 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/25 19:55:30 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:07:16 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 
 	ptr1 = (unsigned char *)str1;
 	ptr2 = (unsigned char *)str2;
-	while (n && *ptr1 && *ptr1 == *ptr2)
+	while (n && *ptr1 == *ptr2)
 	{
 		ptr1++;
 		ptr2++;
@@ -31,12 +31,12 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 		return (0);
 }
 
-/*int main() {
-	char str1[] = "Hello";
-	char str2[] = "Hello";
+/* int main() {
+	char str1[] = "abc \0 abC";
+	char str2[] = "abc \0 abc";
 	int res;
 
-	res = ft_memcmp(str1, str2, 7);
+	res = ft_memcmp(str1, str2, 10);
 	printf("%d\n", res);
 	return (0);
-}*/
+} */

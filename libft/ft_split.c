@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:58:44 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/22 14:06:22 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:49:39 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,27 @@
 
 static int	ft_counter(char const *s, char c)
 {
-	int	i;
 	int	count;
 
-	i = 0;
 	count = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != c)
-		{
+		while (*s == c)
+			s++;
+		if (*s)
 			count++;
-		}
-		i++;
+		while (*s && *s != c)
+			s++;
 	}
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static void	ft_alloc(char **arr, char const *s, char c)
 {
 	char		**str;
-	char		**arr;
 	char const	*tmp;
 
 	tmp = s;
-	arr = (char **)malloc(sizeof(char *) * (ft_counter(s, c) + 1));
-	if (!arr)
-		return (0);
 	str = arr;
 	while (*tmp)
 	{
@@ -56,10 +51,22 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	*str = 0;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+
+	if (!s)
+		return (0);
+	arr = (char **)malloc(sizeof(char *) * (ft_counter(s, c) + 1));
+	if (!arr)
+		return (0);
+	ft_alloc(arr, s, c);
 	return (arr);
 }
 
-/*int main()
+/* int main()
 {
     char str[] = "Hello I'm at 42 School";
     char **arr = ft_split(str, ' ');
@@ -71,4 +78,4 @@ char	**ft_split(char const *s, char c)
         i++;
     }
     return (0);
-}*/
+} */

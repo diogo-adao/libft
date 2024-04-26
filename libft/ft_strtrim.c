@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:49:33 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/25 20:26:12 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 18:08:58 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
-	start = 0;
-	end = ft_strlen(s1) - 1;
 	if (!s1)
 		return (0);
 	if (!set)
 		return (ft_strdup(s1));
+	start = 0;
+	end = ft_strlen(s1) - 1;
 	while (ft_strchr(set, s1[start]) && start <= end)
 		start++;
-	if (start > end)
-		return ("");
+	if (start >= end)
+		return (ft_strdup(""));
 	while (ft_strchr(set, s1[end]) && end >= start)
 		end--;
 	str = (char *)malloc(sizeof(char) * (end - start + 2));
@@ -38,7 +38,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-/*int main()
+/* int main()
 {
 	char str[] = "Hello 42 school";
 	char set[] = "Hool";
@@ -46,4 +46,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char *target = ft_strtrim(str, set);
 	printf("%s\n", target);
 	return (0);
-}*/
+} */

@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:58:47 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/25 18:15:55 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 19:54:27 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,11 @@ char	*ft_strchr(const char *str, int c)
 }
 
 /* int main() {
-	const char str[] = "Hello";
-	char c;
+	const char str[] = "teste";
+	char c = '\0';
 	char *res;
 
 	res = ft_strchr(str, c);
 	printf("String after |%c| is - |%s|\n", c, res);
 	return (0);
-}
- */
+} */
