@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 18:45:10 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/15 14:54:25 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:03:42 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*source;
 	char	*destino;
 
+	if (!dest && !src)
+		return (dest);
 	i = 0;
 	source = (char *)src;
 	destino = (char *)dest;
@@ -29,12 +31,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/*int main()
+/* int main()
 {
-    char str[] = "I'm at 42 School";
-    char dest[] = "I'm testing this function";
-    printf("Before memcpy: %s\n", dest);
-    ft_memcpy(dest, str, 16);
-    printf("After memcpy: %s\n", dest);
+    printf("After memcpy: %s\n", memcpy("             ", ((void*)0), 17));
+	printf("After memcpy: %s\n", ft_memcpy("             ", ((void*)0), 17));
     return (0);
-}*/
+} */

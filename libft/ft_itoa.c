@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:07:43 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/26 14:29:03 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:33:48 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_nbrlen(int n)
 	return (count);
 }
 
-static int	is_negative(int *n)
+static int	ft_negative(int *n)
 {
 	int	sign;
 
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 	int		i;
 	int		sign;
 
-	sign = is_negative(&n);
+	sign = ft_negative(&n);
 	i = ft_nbrlen(n) + sign;
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
