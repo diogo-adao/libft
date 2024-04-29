@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:58:44 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/26 19:49:39 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:38:43 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,23 @@ static int	ft_counter(char const *s, char c)
 	return (count);
 }
 
+void	ft_free_split(char **s)
+{
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		if (s[i])
+			free(s[i]);
+		i++;
+	}
+	if (s)
+		free(s);
+}
+
 static void	ft_alloc(char **arr, char const *s, char c)
 {
 	char		**str;
@@ -46,6 +63,11 @@ static void	ft_alloc(char **arr, char const *s, char c)
 		if (*tmp == c || tmp > s)
 		{
 			*str = ft_substr(s, 0, tmp - s);
+			if (!*str)
+			{
+				ft_free_split(str);
+				return ;
+			}
 			str++;
 			s = tmp;
 		}

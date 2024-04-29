@@ -6,11 +6,11 @@
 #    By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/24 16:34:34 by diolivei          #+#    #+#              #
-#    Updated: 2024/04/29 14:28:04 by diolivei         ###   ########.fr        #
+#    Updated: 2024/04/29 20:11:15 by diolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a

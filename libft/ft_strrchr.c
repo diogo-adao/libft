@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 18:12:29 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/25 18:57:17 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:24:41 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *str, int c)
 	char	*ptr;
 
 	ptr = (char *)str;
-	i = strlen(ptr);
+	i = ft_strlen(ptr);
 	ptr += i;
 	if (!c)
 		return (ptr);
