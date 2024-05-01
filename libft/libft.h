@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 14:11:42 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/29 19:58:40 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/05/01 18:46:08 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
-// ------------ BONUS ------------ 
+// ------------ BONUS ------------
 typedef struct s_list
 {
 	void			*content;
@@ -62,8 +62,12 @@ typedef struct s_list
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-int 	ft_lstsize(t_list *lst);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+int		ft_lstsize(t_list *lst);
 
 #endif

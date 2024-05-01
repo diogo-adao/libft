@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 14:26:30 by diolivei          #+#    #+#             */
-/*   Updated: 2024/05/01 17:31:30 by diolivei         ###   ########.fr       */
+/*   Created: 2024/05/01 18:34:17 by diolivei          #+#    #+#             */
+/*   Updated: 2024/05/01 18:45:17 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*ptr;
-
-	if (!lst || !new)
+	if (!lst || !f)
 		return ;
-	ptr = new;
-	ptr->next = *lst;
-	*lst = ptr;
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }
 
-/* int main()
+/* void ft_test(void *content)
+{
+	*(int *)content = 42;
+}
+
+int main()
 {
     int data = 42;
     int data2 = 69;
@@ -43,7 +48,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
     new->content = &data3;
     new->next = NULL;
 
-    ft_lstadd_front(&head, new);
+	ptr->next = new;
+
+    ft_lstiter(head, ft_test);
 
     ptr = head;
     while (ptr != NULL)

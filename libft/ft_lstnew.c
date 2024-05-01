@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 20:11:20 by diolivei          #+#    #+#             */
-/*   Updated: 2024/04/29 20:11:48 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/05/01 14:32:07 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_list	*ft_lstnew(void *content)
 {
-    t_list *head;
+	t_list	*head;
 
-    head = (t_list *)malloc(sizeof(t_list));
-    if (!head)
-        return (0);
-    head->content = content;
-    head->next = NULL;
-    return (head);
+	head = (t_list *)malloc(sizeof(t_list));
+	if (!head)
+		return (0);
+	head->content = content;
+	head->next = NULL;
+	return (head);
 }
 
 /* int main()
