@@ -6,7 +6,7 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 18:46:25 by diolivei          #+#    #+#             */
-/*   Updated: 2024/05/01 19:47:36 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/05/02 19:39:02 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*save;
+	t_list	*head;
 
 	if (!lst || !f || !del)
 		return (0);
 	new_list = ft_lstnew(f(lst->content));
 	if (!new_list)
 		return (0);
-	save = new_list;
+	head = new_list;
 	lst = lst->next;
 	while (lst)
 	{
 		new_list->next = ft_lstnew(f(lst->content));
 		if (!new_list->next)
 		{
-			ft_lstclear(&save, del);
+			ft_lstclear(&head, del);
 			return (0);
 		}
 		new_list = new_list->next;
 		lst = lst->next;
 	}
 	new_list->next = NULL;
-	return (save);
+	return (head);
 }
 
 /* void *transform_content(void *content)
@@ -69,5 +69,6 @@ int main()
 		ptr = ptr->next;
 	}
 	printf("\n");
+
 	return 0;
 } */
