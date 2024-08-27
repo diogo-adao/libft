@@ -6,17 +6,22 @@
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 14:11:42 by diolivei          #+#    #+#             */
-/*   Updated: 2024/05/01 18:46:08 by diolivei         ###   ########.fr       */
+/*   Updated: 2024/08/27 15:47:55 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stdarg.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -52,6 +57,17 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
+
+// ---------- PRINTF -------------
+int		ft_putchar(int c);
+int		ft_putstr(char *s);
+int		ft_putnbr(long n, int base);
+int		ft_putupper(unsigned int n, int base);
+int		ft_putpointer(unsigned long n, int base);
+int		ft_printf(const char *format, ...);
+
+// ----------- GET_NEXT_LINE -----------
+char	*get_next_line(int fd);
 
 // ------------ BONUS ------------
 typedef struct s_list
