@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:29 by diolivei          #+#    #+#             */
-/*   Updated: 2025/05/23 18:05:20 by diolivei         ###   ########.fr       */
+/*   Created: 2025/04/17 15:10:37 by diolivei          #+#    #+#             */
+/*   Updated: 2025/04/17 15:10:39 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_realloc(void *old_ptr, size_t old_len, size_t new_len)
 {
-	size_t	i;
+	char	*new_ptr;
 
-	i = 0;
-	if (!str)
-		return (i);
-	while (str[i])
-		i++;
-	return (i);
+	new_ptr = malloc(new_len);
+	if (!new_ptr)
+		return (NULL);
+	ft_bzero(new_ptr, new_len);
+	ft_memcpy(new_ptr, old_ptr, old_len);
+	free(old_ptr);
+	return (new_ptr);
 }
-
-/*int main(int argc, char *argv[])
-{
-    int i = 1;
-
-    if (argc < 2)
-    {
-        printf("Provide arguments.");
-        return 0;
-    }
-
-    while (i < argc)
-    {
-        // printf("%d\n", strlen(argv[i]));
-        printf("%d\n", ft_strlen(argv[i]));
-        i++;
-    }
-    return (0);
-}*/

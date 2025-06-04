@@ -1,44 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:29 by diolivei          #+#    #+#             */
-/*   Updated: 2025/05/23 18:05:20 by diolivei         ###   ########.fr       */
+/*   Created: 2025/05/19 19:13:46 by diolivei          #+#    #+#             */
+/*   Updated: 2025/05/19 19:14:09 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	size_t	i;
-
-	i = 0;
-	if (!str)
-		return (i);
-	while (str[i])
-		i++;
-	return (i);
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
-
-/*int main(int argc, char *argv[])
-{
-    int i = 1;
-
-    if (argc < 2)
-    {
-        printf("Provide arguments.");
-        return 0;
-    }
-
-    while (i < argc)
-    {
-        // printf("%d\n", strlen(argv[i]));
-        printf("%d\n", ft_strlen(argv[i]));
-        i++;
-    }
-    return (0);
-}*/

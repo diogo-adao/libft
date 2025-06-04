@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diolivei <diolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 14:11:29 by diolivei          #+#    #+#             */
-/*   Updated: 2025/05/23 18:05:20 by diolivei         ###   ########.fr       */
+/*   Created: 2024/04/15 19:00:54 by diolivei          #+#    #+#             */
+/*   Updated: 2025/06/04 15:48:14 by diolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	if (!str)
-		return (i);
-	while (str[i])
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
 		i++;
-	return (i);
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
-
-/*int main(int argc, char *argv[])
-{
-    int i = 1;
-
-    if (argc < 2)
-    {
-        printf("Provide arguments.");
-        return 0;
-    }
-
-    while (i < argc)
-    {
-        // printf("%d\n", strlen(argv[i]));
-        printf("%d\n", ft_strlen(argv[i]));
-        i++;
-    }
-    return (0);
-}*/

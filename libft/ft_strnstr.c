@@ -33,10 +33,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 
 /* int main() {
     char string[] = "Hello 42 school!";
-    char substring[] = "42 school";
+    char substring[] = "42 school!";
     char *ptr;
 
-    ptr = ft_strnstr(string, substring, 2);
+    ptr = ft_strnstr(string, substring, 3);
     if (ptr != NULL) {
         printf("%s\n", ptr);
     } else {
